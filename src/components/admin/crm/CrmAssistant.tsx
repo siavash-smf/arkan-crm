@@ -41,7 +41,8 @@ export default function CrmAssistant() {
     scrollDown();
 
     try {
-      const res = await fetch("/api/crm-chat", {
+      // زیر /admin است چون کوکی نشست ادمین با path=/admin ست می‌شود
+      const res = await fetch("/admin/api/crm-chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ messages: history }),
